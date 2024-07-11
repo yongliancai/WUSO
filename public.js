@@ -1,13 +1,12 @@
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC4NzV-q4dBn_IytInpXlbbhEPaHJU9ULk",
-    authDomain: "webavr-b9273.firebaseapp.com",
-    databaseURL: "https://webavr-b9273-default-rtdb.firebaseio.com",
-    projectId: "webavr-b9273",
-    storageBucket: "webavr-b9273.appspot.com",
-    messagingSenderId: "240463881336",
-    appId: "1:240463881336:web:6642598bf894378f2ff98d",
-    measurementId: "G-6Q7ZQ22WJN",
+  apiKey: "AIzaSyDdjW4ZZIZ4wVVfE0iOaFNJ3CwDh09breA",
+  authDomain: "wuso-41655.firebaseapp.com",
+  projectId: "wuso-41655",
+  storageBucket: "wuso-41655.appspot.com",
+  messagingSenderId: "633187861207",
+  appId: "1:633187861207:web:0e81f6a40f11b2c691e692",
+  measurementId: "G-1YLXMG04FV"
   };
   
   // Initialize Firebase
