@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-header h1 {
+            margin: 0;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .user-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .user-info .info-title {
+            font-weight: bold;
+            color: #0071e3;
+        }
+        .paper-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .paper-section h2 {
+            margin-top: 0;
+            color: #0071e3;
+        }
+        .paper-section p {
+            margin: 5px 0;
+        }
+        .paper-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>個人頁</h1>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="public.html">Public Documents</a>
+            <a href="upload.html">Upload</a>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="header-right">
+            <a href="#" id="login-logout">登入</a>
+            <span class="username" id="username"></span>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div id="user-info" class="user-info">
+            <h2>Profile Info</h2>
+            <p class="info-title">Name:</p>
+            <p id="user-name">Loading...</p>
+            <p class="info-title">Email:</p>
+            <p id="user-email">Loading...</p>
+        </div>
+    </div>
+    <div id="papers-container" class="container"></div>
+    <div class="footer">
+        <p>&copy; UTEL LAB All rights reserved.</p>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

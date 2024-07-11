@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .section {
+            display: none;
+            margin: 20px 0;
+        }
+        .section.active {
+            display: block;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .progress-bar div {
+            height: 20px;
+            width: 0;
+            background-color: #0071e3;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .input-group textarea {
+            height: 200px;
+        }
+        .button-group {
+            text-align: right;
+        }
+        .button-group button {
+            background-color: #0071e3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+        .button-group button:hover {
+            background-color: #005bb5;
+        }
+        .button-group button:first-child {
+            background-color: #ccc;
+        }
+        .button-group button:first-child:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>上傳區</h1>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="public.html">Public Documents</a>
+            <a href="upload.html">Upload</a>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="header-right">
+            <a href="#" id="login-logout">登入</a>
+            <span class="username" id="username"></span>
+        </div>
+    </div>
+    <div class="progress-bar">
+        <div id="progress-bar" style="width: 0%;">0%</div>
+    </div>
+    <div id="upload-section" class="container">
+        <div id="upload-title" class="section active">
+            <h2>Upload Paper Title</h2>
+            <div class="input-group">
+                <label for="paper-title">Paper Title</label>
+                <input type="text" id="paper-title" placeholder="Enter your paper title here...">
+            </div>
+            <div class="button-group">
+                <button id="upload-title-button">Next</button>
+            </div>
+        </div>
+        <div id="upload-abstract" class="section">
+            <h2>Upload Abstract</h2>
+            <div class="input-group">
+                <label for="abstract">Abstract</label>
+                <textarea id="abstract" placeholder="Enter your abstract here..."></textarea>
+            </div>
+            <div class="button-group">
+                <button id="back-abstract-button">Previous</button>
+                <button id="upload-abstract-button">Next</button>
+            </div>
+        </div>
+        <div id="upload-tts-link" class="section">
+            <h2>Upload Text to Speech Link</h2>
+            <div class="input-group">
+                <label for="tts-link">Text to Speech Link</label>
+                <input type="text" id="tts-link" placeholder="Enter Text to Speech link here...">
+            </div>
+            <div class="button-group">
+                <button id="back-tts-link-button">Previous</button>
+                <button id="upload-tts-link-button">Next</button>
+            </div>
+        </div>
+        <div id="upload-ai-video-link" class="section">
+            <h2>Upload AI Video Link</h2>
+            <div class="input-group">
+                <label for="ai-video-link">AI Video Link</label>
+                <input type="text" id="ai-video-link" placeholder="Enter AI Video link here...">
+            </div>
+            <div class="button-group">
+                <button id="back-ai-video-link-button">Previous</button>
+                <button id="upload-ai-video-link-button">Next</button>
+            </div>
+        </div>
+        <div id="upload-ppt-link" class="section">
+            <h2>Upload PPT Link</h2>
+            <div class="input-group">
+                <label for="ppt-link">PPT Link</label>
+                <input type="text" id="ppt-link" placeholder="Enter PPT link here...">
+            </div>
+            <div class="button-group">
+                <button id="back-ppt-link-button">Previous</button>
+                <button id="upload-ppt-link-button">Finish</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; UTEL LAB All rights reserved.</p>
+    </div>
+    <script src="upload.js"></script>
+</body>
+</html>
